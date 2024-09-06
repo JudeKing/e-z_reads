@@ -41,3 +41,7 @@ This is a command-line-based CRUD (Create, Read, Update, Delete) application for
 * The program checks if the books already exist in the database to avoid duplication.
 * After each operation, the user can choose to perform another action or return to the main menu.
 
+
+## Author
+
+**Jude King**
