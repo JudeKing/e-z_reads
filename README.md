@@ -34,8 +34,8 @@ This is a command-line-based CRUD (Create, Read, Update, Delete) application for
 * **Search Books:** Search for books in the database by ID, author, or view the book with the highest or lowest quantity.
 * **Exit:** Close the application.
 
-![Screenshot of the main navigation](https://ibb.co/x37zbq1)
-![Screenshot of option 1: enter book](https://ibb.co/jhrTbTL)
+![Screenshot of the main navigation](https://i.ibb.co/Ws2BXvk/main-navigation.png)
+![Screenshot of option 1: enter book](https://i.ibb.co/BLCtctg/enter-book-option.png)
 
 3. **CRUD Operations:**
 * The program checks if the books already exist in the database to avoid duplication.
