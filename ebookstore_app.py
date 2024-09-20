@@ -191,10 +191,10 @@ Enter the book author: '''
             continue
 
         try:
-            book_qty = input(
+            book_qty = int(input(
             '''
 Enter the current stock of the book: '''
-            )
+            ))
 
         except ValueError:
             print('Enter only a number!')
