@@ -371,15 +371,42 @@ There are no books available! Please add books!'''
                 # Opens the database file.
                 db = sqlite3.connect('./database/ebookstore.db')
                 cursor = db.cursor() # Get a cursor object.
-                #
+
                 cursor.execute(
-                    '''DELETE FROM book WHERE id = ?''',
+                    '''SELECT title FROM book WHERE id = ?''',
                     (book_id,)
                 )
 
-                db.commit()
+                book_title = cursor.fetchone()
+                book_title = book_title[0]
+                while True:
 
-                print(f"\nBook with an ID of {book_id} has been deleted!")
+                    warn_user = int(input(f'''
+Are you sure you wish to delete the book with the title '{book_title}'?
+
+1. Yes
+2. No
+
+: '''
+))
+                    if not continue_option(warn_user):
+                        continue
+                    else: 
+                        break
+
+                if warn_user == 1:
+                    cursor.execute(
+                        '''DELETE FROM book WHERE id = ?''',
+                        (book_id,)
+                    )
+                    db.commit()
+
+                    print(f"\n{book_title} has been deleted!")
+                    break
+
+                elif warn_user == 2:
+                    print("Returning to the main menu.")
+                    break
 
             except sqlite3.Error as e:
                 # Roll back any change if something went wrong.
